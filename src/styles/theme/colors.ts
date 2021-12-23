@@ -9,6 +9,9 @@ const light = {
   text: {
     _1: '#000000',
   },
+  border: {
+    _1: '#FFFFFF',
+  },
 };
 
 const dark = {
@@ -19,6 +22,9 @@ const dark = {
   },
   text: {
     _1: '#FFFFFF',
+  },
+  border: {
+    _1: '#000000',
   },
 };
 

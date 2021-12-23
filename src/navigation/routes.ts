@@ -1,5 +1,5 @@
 const Routes = {
-  Parallax: 'parallax',
+  Parallax: 'Parallax Carousel',
 };
 
 export default Routes;
