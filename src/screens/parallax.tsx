@@ -18,7 +18,7 @@ const data = ParallaxData.map((uri, _) => ({
 
 const AnimatedImage = Animated.createAnimatedComponent(Image);
 
-const Parallax = (props: ScreenProps<any>) => {
+const Parallax = () => {
   const styles = useStyles();
   const scrollX = useRef(new Animated.Value(0)).current;
 

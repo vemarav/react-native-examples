@@ -1,29 +1,49 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import {
-  createStackNavigator,
-  StackScreenProps,
-} from '@react-navigation/stack';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
 import Routes from './routes';
 
+import Examples from '../screens/examples';
+import useExampleOptions from '../styles/navigation/examples';
+import AnimatedText from '../screens/animatedText';
+import useAnimatedTextOptions from '../styles/navigation/animatedText';
 import Parallax from '../screens/parallax';
 import useParallaxOptions from '../styles/navigation/parallax';
+
+import useTheme from '../styles/theme';
+import { StatusBar } from 'react-native';
 
 const Stack = createStackNavigator();
 
 const Navigation = () => {
+  const { colors } = useTheme();
+  const exampleOptions = useExampleOptions();
   const parallaxOptions = useParallaxOptions();
+  const animatedTextOptions = useAnimatedTextOptions();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={parallaxOptions}
-          name={Routes.Parallax}
-          component={Parallax}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <StatusBar backgroundColor={colors.background._1} />
+      <NavigationContainer theme={colors.scheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <Stack.Navigator>
+          <Stack.Screen
+            options={exampleOptions}
+            name={Routes.Examples}
+            component={Examples}
+          />
+          <Stack.Screen
+            options={parallaxOptions}
+            name={Routes.Parallax}
+            component={Parallax}
+          />
+          <Stack.Screen
+            options={animatedTextOptions}
+            name={Routes.AnimatedText}
+            component={AnimatedText}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 };
 

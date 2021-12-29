@@ -17,6 +17,7 @@ const getStyleSheet = ({ colors, fonts }: Theme) => {
       alignItems: 'center',
     },
     imageBorder: {
+      elevation: 20,
       shadowColor: '#000',
       shadowOpacity: 0.3,
       shadowRadius: 20,
