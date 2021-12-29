@@ -23,7 +23,7 @@ const Navigation = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={colors.background._1} />
+      <StatusBar backgroundColor={colors.background._1} barStyle={colors.barStyle} />
       <NavigationContainer theme={colors.scheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator>
           <Stack.Screen
