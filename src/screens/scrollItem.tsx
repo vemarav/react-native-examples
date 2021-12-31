@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Animated, Text, View } from 'react-native';
+import { Animated, StatusBar, Text, View } from 'react-native';
 import faker from 'faker';
 
 import useStyles from '../styles/screens/scrollItem';
@@ -31,6 +31,7 @@ const scrollItem = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar hidden />
       <FastImage source={{ uri: bgImage }} style={styles.bgImage} />
       <Animated.FlatList
         data={DATA}

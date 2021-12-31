@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import useTheme, { Theme } from '../theme';
 
 const getStyleSheet = ({ colors, fonts }: Theme) => {
@@ -16,6 +16,7 @@ const getStyleSheet = ({ colors, fonts }: Theme) => {
     },
     listContainer: {
       padding: spacing,
+      paddingTop: StatusBar.currentHeight ?? 35 + spacing,
     },
     item: {
       flexDirection: 'row',

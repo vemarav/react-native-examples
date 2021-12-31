@@ -18,6 +18,7 @@ const Stack = createStackNavigator();
 const Navigation = () => {
   const { colors } = useTheme();
   const stackOptions = useStackOptions();
+  const noHeaderOptions = { ...stackOptions, headerShown: false };
 
   return (
     <>
@@ -41,7 +42,7 @@ const Navigation = () => {
           />
           <Stack.Screen options={stackOptions} name={Routes.Clock} component={Clock} />
           <Stack.Screen
-            options={stackOptions}
+            options={noHeaderOptions}
             name={Routes.ScrollItem}
             component={ScrollItem}
           />
