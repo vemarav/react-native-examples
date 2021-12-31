@@ -5,7 +5,7 @@ import { Routes, ScreenProps } from '../navigation';
 
 import useStyles from '../styles/screens/examples';
 
-const AnimatedText = (props: ScreenProps<any>) => {
+const Examples = (props: ScreenProps<any>) => {
   const styles = useStyles();
 
   const navigateTo = (screen: string, params = {}) => {
@@ -14,17 +14,15 @@ const AnimatedText = (props: ScreenProps<any>) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <TouchableOpacity onPress={() => navigateTo(Routes.Parallax)}>
-        <Text style={styles.text}>Parallax Carousel</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateTo(Routes.AnimatedText)}>
-        <Text style={styles.text}>Animated Text</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigateTo(Routes.Clock)}>
-        <Text style={styles.text}>Clock</Text>
-      </TouchableOpacity>
+      {Object.values(Routes).map(screen =>
+        screen === Routes.Examples ? null : (
+          <TouchableOpacity key={screen} onPress={() => navigateTo(screen)}>
+            <Text style={styles.text}>{screen}</Text>
+          </TouchableOpacity>
+        ),
+      )}
     </ScrollView>
   );
 };
 
-export default AnimatedText;
+export default Examples;

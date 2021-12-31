@@ -1,8 +1,9 @@
 const Routes = {
   Examples: 'Examples',
-  Parallax: 'ParallaxCarousel',
-  AnimatedText: 'AnimatedText',
+  AnimatedText: 'Text',
   Clock: 'Clock',
+  Parallax: 'Parallax Carousel',
+  ScrollItem: 'Scroll Item',
 };
 
 export default Routes;

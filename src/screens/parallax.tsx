@@ -3,7 +3,6 @@ import { View, Animated } from 'react-native';
 import Image from 'react-native-fast-image';
 
 import useStyles from '../styles/screens/parallax';
-import { ScreenProps } from '../navigation';
 import { ParallaxData } from '../common/datum';
 
 const data = ParallaxData.map((uri, _) => ({

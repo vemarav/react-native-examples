@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Animated, View } from 'react-native';
 import dayjs from 'dayjs';
 
-import { ScreenProps } from '../navigation';
 import useStyles from '../styles/screens/clock';
 
 const Clock = () => {

@@ -5,10 +5,12 @@ const light = {
   barStyle: 'dark-content',
   background: {
     _1: '#FFFFFF',
+    _2: '#000000',
   },
   text: {
     _1: '#000000',
     _2: '#272727',
+    _3: '#388CFF',
   },
   border: {
     _1: '#FFFFFF',
@@ -21,10 +23,12 @@ const dark = {
   barStyle: 'light-content',
   background: {
     _1: '#000000',
+    _2: '#FFFFFF',
   },
   text: {
     _1: '#FFFFFF',
     _2: '#F8F8F8',
+    _3: '#1863D3',
   },
   border: {
     _1: '#000000',

@@ -4,14 +4,12 @@ import { createStackNavigator, StackScreenProps } from '@react-navigation/stack'
 import Routes from './routes';
 
 import Examples from '../screens/examples';
-import useExampleOptions from '../styles/navigation/examples';
 import AnimatedText from '../screens/animatedText';
-import useAnimatedTextOptions from '../styles/navigation/animatedText';
 import Parallax from '../screens/parallax';
-import useParallaxOptions from '../styles/navigation/parallax';
 import Clock from '../screens/clock';
-import useClockOptions from '../styles/navigation/clock';
+import ScrollItem from '../screens/scrollItem';
 
+import useStackOptions from '../styles/navigation/stack';
 import useTheme from '../styles/theme';
 import { StatusBar } from 'react-native';
 
@@ -19,10 +17,7 @@ const Stack = createStackNavigator();
 
 const Navigation = () => {
   const { colors } = useTheme();
-  const exampleOptions = useExampleOptions();
-  const parallaxOptions = useParallaxOptions();
-  const animatedTextOptions = useAnimatedTextOptions();
-  const clockOptions = useClockOptions();
+  const stackOptions = useStackOptions();
 
   return (
     <>
@@ -30,21 +25,26 @@ const Navigation = () => {
       <NavigationContainer theme={colors.scheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator>
           <Stack.Screen
-            options={exampleOptions}
+            options={stackOptions}
             name={Routes.Examples}
             component={Examples}
           />
           <Stack.Screen
-            options={parallaxOptions}
+            options={stackOptions}
             name={Routes.Parallax}
             component={Parallax}
           />
           <Stack.Screen
-            options={animatedTextOptions}
+            options={stackOptions}
             name={Routes.AnimatedText}
             component={AnimatedText}
           />
-          <Stack.Screen options={clockOptions} name={Routes.Clock} component={Clock} />
+          <Stack.Screen options={stackOptions} name={Routes.Clock} component={Clock} />
+          <Stack.Screen
+            options={stackOptions}
+            name={Routes.ScrollItem}
+            component={ScrollItem}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
