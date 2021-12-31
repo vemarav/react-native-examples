@@ -9,6 +9,8 @@ import AnimatedText from '../screens/animatedText';
 import useAnimatedTextOptions from '../styles/navigation/animatedText';
 import Parallax from '../screens/parallax';
 import useParallaxOptions from '../styles/navigation/parallax';
+import Clock from '../screens/clock';
+import useClockOptions from '../styles/navigation/clock';
 
 import useTheme from '../styles/theme';
 import { StatusBar } from 'react-native';
@@ -20,6 +22,7 @@ const Navigation = () => {
   const exampleOptions = useExampleOptions();
   const parallaxOptions = useParallaxOptions();
   const animatedTextOptions = useAnimatedTextOptions();
+  const clockOptions = useClockOptions();
 
   return (
     <>
@@ -41,6 +44,7 @@ const Navigation = () => {
             name={Routes.AnimatedText}
             component={AnimatedText}
           />
+          <Stack.Screen options={clockOptions} name={Routes.Clock} component={Clock} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

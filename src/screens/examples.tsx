@@ -20,6 +20,9 @@ const AnimatedText = (props: ScreenProps<any>) => {
       <TouchableOpacity onPress={() => navigateTo(Routes.AnimatedText)}>
         <Text style={styles.text}>Animated Text</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigateTo(Routes.Clock)}>
+        <Text style={styles.text}>Clock</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };

@@ -13,7 +13,7 @@ const getStyleSheet = ({ colors, fonts }: Theme) => {
       paddingVertical: 10,
       color: colors.text._2,
       fontSize: fonts.sizes._16,
-      fontFamily: fonts.family.semiBold,
+      fontFamily: fonts.family.regular,
     },
   });
 };

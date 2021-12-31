@@ -11,7 +11,7 @@ const getStyleSheet = ({ colors, fonts }: Theme) => {
     text: {
       color: colors.text._1,
       fontSize: fonts.sizes._20,
-      fontFamily: fonts.family.semiBold,
+      fontFamily: fonts.family.regular,
       textAlign: 'center',
     },
     textWrap: {
