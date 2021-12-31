@@ -30,7 +30,7 @@ const getStyleSheet = ({ colors, fonts }: Theme) => {
     minutes: {
       height: '45%',
       backgroundColor:
-        colors.scheme === 'light' ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.)',
+        colors.scheme === 'light' ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)',
       marginTop: '5%',
       width: 3,
       borderRadius: 3,
