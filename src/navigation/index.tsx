@@ -8,6 +8,7 @@ import AnimatedText from '../screens/animatedText';
 import Parallax from '../screens/parallax';
 import Clock from '../screens/clock';
 import ScrollItem from '../screens/scrollItem';
+import Circle from '../screens/circle';
 
 import useStackOptions from '../styles/navigation/stack';
 import useTheme from '../styles/theme';
@@ -45,6 +46,11 @@ const Navigation = () => {
             options={noHeaderOptions}
             name={Routes.ScrollItem}
             component={ScrollItem}
+          />
+          <Stack.Screen
+            options={noHeaderOptions}
+            name={Routes.Circle}
+            component={Circle}
           />
         </Stack.Navigator>
       </NavigationContainer>

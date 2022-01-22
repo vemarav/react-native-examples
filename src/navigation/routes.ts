@@ -4,6 +4,7 @@ const Routes = {
   Clock: 'Clock',
   Parallax: 'Parallax Carousel',
   ScrollItem: 'Scroll Item',
+  Circle: 'Circle Animated Navigation',
 };
 
 export default Routes;
