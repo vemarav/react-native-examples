@@ -1,26 +1,26 @@
 import React, { useRef } from 'react';
 import { Animated, StatusBar, Text, View } from 'react-native';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 import useStyles from '../styles/screens/scrollItem';
 import FastImage from 'react-native-fast-image';
 
-faker.seed(10);
+faker.seed(30);
 
 const DATA = Array(30)
   .fill('')
   .map((_, i) => ({
-    key: faker.datatype.uuid(),
-    image: `https://randomuser.me/api/portraits/${faker.helpers.randomize([
+    key: faker.database.mongodbObjectId(),
+    image: `https://randomuser.me/api/portraits/${faker.helpers.arrayElement([
       'women',
       'men',
-    ])}/${faker.datatype.number(60)}.jpg`,
-    name: faker.name.findName(),
-    job: faker.name.jobTitle(),
+    ])}/${faker.number.int(60)}.jpg`,
+    name: faker.person.fullName(),
+    job: faker.person.jobTitle(),
     email: faker.internet.email(),
   }));
 
-const scrollItem = () => {
+const ScrollItem = () => {
   const styles = useStyles();
   const scrollY = useRef(new Animated.Value(0)).current;
 
@@ -36,18 +36,31 @@ const scrollItem = () => {
       <Animated.FlatList
         data={DATA}
         style={styles.listContainer}
-        onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
-          useNativeDriver: true,
-        })}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          {
+            useNativeDriver: true,
+          },
+        )}
         keyExtractor={item => item.key}
         renderItem={({ item, index }) => {
           const interpolation = {
-            inputRange: [-1, 0, styles.itemSize * index, styles.itemSize * (index + 2)],
+            inputRange: [
+              -1,
+              0,
+              styles.itemSize * index,
+              styles.itemSize * (index + 2),
+            ],
             outputRange: [1, 1, 1, 0],
           };
 
           const opacityInterpolation = {
-            inputRange: [-1, 0, styles.itemSize * index, styles.itemSize * (index + 0.8)],
+            inputRange: [
+              -1,
+              0,
+              styles.itemSize * index,
+              styles.itemSize * (index + 0.8),
+            ],
             outputRange: [1, 1, 1, 0],
           };
 
@@ -72,4 +85,4 @@ const scrollItem = () => {
   );
 };
 
-export default scrollItem;
+export default ScrollItem;
