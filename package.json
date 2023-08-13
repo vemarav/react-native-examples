@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "apk": "react-native run-android --variant=release",
+    "apk": "react-native run-android --mode=release",
     "ios": "react-native run-ios",
-    "start": "watchman watch-del '/Users/aravind/work/react-native-examples' ; watchman watch-project '/Users/aravind/work/react-native-examples'; react-native start",
+    "start": "watchman watch-del `pwd`; watchman watch-project `pwd`; react-native start",
     "test": "jest",
     "lint": "eslint .",
     "postinstall": "cd ios; pod install; cd ..;"
@@ -20,7 +20,8 @@
     "react": "18.2.0",
     "react-native": "0.72.1",
     "react-native-fast-image": "8.6.3",
-    "react-native-gesture-handler": "2.12.0",
+    "react-native-gesture-handler": "2.12.1",
+    "react-native-reanimated": "3.3.0",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "3.22.0"
   },

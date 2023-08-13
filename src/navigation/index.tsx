@@ -1,6 +1,13 @@
 import React from 'react';
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
+import {
+  createStackNavigator,
+  StackScreenProps,
+} from '@react-navigation/stack';
 import Routes from './routes';
 
 import Examples from '../screens/examples';
@@ -9,6 +16,7 @@ import Parallax from '../screens/parallax';
 import Clock from '../screens/clock';
 import ScrollItem from '../screens/scrollItem';
 import Circle from '../screens/circle';
+import TarotCards from '../screens/tarot';
 
 import useStackOptions from '../styles/navigation/stack';
 import useTheme from '../styles/theme';
@@ -23,8 +31,12 @@ const Navigation = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={colors.background._1} barStyle={colors.barStyle} />
-      <NavigationContainer theme={colors.scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <StatusBar
+        backgroundColor={colors.background._1}
+        barStyle={colors.barStyle}
+      />
+      <NavigationContainer
+        theme={colors.scheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator>
           <Stack.Screen
             options={stackOptions}
@@ -41,7 +53,11 @@ const Navigation = () => {
             name={Routes.AnimatedText}
             component={AnimatedText}
           />
-          <Stack.Screen options={stackOptions} name={Routes.Clock} component={Clock} />
+          <Stack.Screen
+            options={stackOptions}
+            name={Routes.Clock}
+            component={Clock}
+          />
           <Stack.Screen
             options={noHeaderOptions}
             name={Routes.ScrollItem}
@@ -51,6 +67,11 @@ const Navigation = () => {
             options={noHeaderOptions}
             name={Routes.Circle}
             component={Circle}
+          />
+          <Stack.Screen
+            options={stackOptions}
+            name={Routes.Tarot}
+            component={TarotCards}
           />
         </Stack.Navigator>
       </NavigationContainer>
